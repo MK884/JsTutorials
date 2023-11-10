@@ -1,0 +1,112 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing:border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    height: 600px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.card h1{
+    text-align: center;
+    margin: 10px;
+    font-size: 42px;
+}
+
+#search-row{
+    display: flex;
+    justify-content: space-between;
+    background-color: #efefef;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin: 20px;
+    height: 50px;
+}
+#search-row #search{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+#search-row button{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: orange;
+    height: 50px;
+    width: 120px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+}
+ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer;
+}
+
+ul li::before{
+    content: '';
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid #dadada;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    text-align: center;
+}
+
+ul li.checked{
+    text-decoration: line-through;
+    color: orange;
+}
+
+ul li.checked::before{
+    background-color: orange;
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    top: 10px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+ul li span:hover{
+    
+    background-color: #dadada;
+}
