@@ -47,3 +47,19 @@ body {
     background-color:cornflowerblue;
 
 }
+
+.container{
+    position: relative;
+}
+
+#card .container i{
+    color: #fff;
+    font-size: 44px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(0);
+    transition: transform ease 0.5s;
+}
+
