@@ -1,0 +1,33 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container img{
+    height: 400px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    background-color:azure;
+}
