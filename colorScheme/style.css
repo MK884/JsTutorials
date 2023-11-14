@@ -1,0 +1,53 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.card{
+    height: 400px;
+    width: 550px;
+    background-color: #111;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    
+}
+.card .colors {
+    margin: 80px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+} 
+
+button{
+    padding: 16px;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 8px;
+    width: 100px;
+}
+#green{
+    background-color: green;
+}
+#yellow{
+    background-color: yellow;
+}
+#aqua{
+    background-color: aqua;
+}
+#orange{
+    background-color: orange;
+}
