@@ -20,7 +20,6 @@ btnSearch.addEventListener('click', function(){
 
 tasksBox.addEventListener('click', function(e){
     if(e.target.tagName === "LI"){
-        console.log('click')
         e.target.classList.toggle('checked');
         saveData();
     }else if(e.target.tagName === "SPAN"){
@@ -35,6 +34,11 @@ function saveData(){
 
 function getData(){
     tasksBox.innerHTML = localStorage.getItem('tasks');
+    // if(tasksBox.innerHTML == null){
+    //     var span = document.createElement('SPAN');
+    //     span.innerHTML = 'You have no tasks';
+    //     tasksBox.appendChild(span) 
+    // }
 }
 
 getData();

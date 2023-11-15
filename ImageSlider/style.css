@@ -1,0 +1,56 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    user-select: none;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+   width: 80%;
+   max-height: 1200px;
+}
+.wraper .image-list{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    overflow-x: auto;
+    gap: 14px;
+    scrollbar-width: 0;
+}
+.wraper .image-list::-webkit-scrollbar{
+    display: none;
+}
+.wraper .image-list img{
+    height: 400px;
+    width: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+.wraper{
+    position: relative;
+}
+.wraper button{
+    padding: 10px;
+    font-size: 28px;
+    background-color: #111;
+    color: #fff;border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+button:active{
+    background-color: #444;
+}
+.wraper #prev-btn{
+    left: -14px;
+}
+.wraper #next-btn{
+    right: -14px;
+}
