@@ -1,0 +1,57 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    user-select: none;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #111;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.container{
+    margin: 420px auto;
+    height: auto;
+    width: 300px;
+}
+.container .select{
+    margin-bottom: 12px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.select-open i{
+    transform: rotate(180deg);
+}
+.menu{
+    background-color: #fff;
+    border-radius: 15px;
+    list-style: none;
+    padding: 8px;
+    opacity: 0;
+    display: none;
+}
+.menu-open{
+    opacity: 1;
+    display: block;
+}
+.menu li{
+    padding: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.menu .active{
+    background-color: #dadada;
+}
+.menu li:hover{
+    background-color: #dadada;
+}
