@@ -5,14 +5,14 @@
     user-select: none;
 }
 html, body{
-    height: 100%;
+    height: 100vh;
     width: 100%;
+}
+::-webkit-scrollbar{
+    display: none;
 }
 body{
     background-color: #111;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 .container{
     margin: 420px auto;
@@ -29,8 +29,11 @@ body{
     align-items: center;
     cursor: pointer;
 }
+i{
+    transition: transform linear 0.2s;
+}
 .select-open i{
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }
 .menu{
     background-color: #fff;
@@ -39,6 +42,8 @@ body{
     padding: 8px;
     opacity: 0;
     display: none;
+    max-height: 350px;
+    overflow-y: scroll;
 }
 .menu-open{
     opacity: 1;
@@ -49,9 +54,7 @@ body{
     border-radius: 15px;
     cursor: pointer;
 }
-.menu .active{
+.menu .active, .menu li:hover{
     background-color: #dadada;
 }
-.menu li:hover{
-    background-color: #dadada;
-}
+
