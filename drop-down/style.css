@@ -8,7 +8,7 @@ html, body{
     height: 100vh;
     width: 100%;
 }
-::-webkit-scrollbar{
+body::-webkit-scrollbar{
     display: none;
 }
 body{
@@ -32,22 +32,41 @@ body{
 i{
     transition: transform linear 0.2s;
 }
-.select-open i{
-    transform: rotate(-180deg);
-}
-.menu{
+.options{
     background-color: #fff;
     border-radius: 15px;
     list-style: none;
     padding: 8px;
     opacity: 0;
     display: none;
-    max-height: 350px;
-    overflow-y: scroll;
+   
 }
-.menu-open{
+.options .search{
+    padding: 1rem;
+}
+.search #search-input{
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #dadada;
+}
+.menu{
+    max-height: 300px;
+    overflow-y: scroll;
+    padding-right: 7px;
+
+}
+.container-active .options {
     opacity: 1;
     display: block;
+}
+.container-active i{
+    transform: rotate(-180deg);
+}
+.menu p{
+    padding: 1rem;
+    color: red;
 }
 .menu li{
     padding: 1rem;
@@ -58,3 +77,17 @@ i{
     background-color: #dadada;
 }
 
+.menu::-webkit-scrollbar{
+    width: 7px;
+}
+.menu::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+    border-radius: 25px;
+}
+.menu::-webkit-scrollbar-thumb{
+    background-color: #ccc; 
+    border-radius: 25px;
+}
+.menu::-webkit-scrollbar-thumb:hover{
+    background-color: #b3b3b3b3;
+}
