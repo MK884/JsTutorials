@@ -26,7 +26,7 @@ body{
     cursor: pointer;
     border-radius: 12px;
     box-shadow: 0 10px 25px #dadada;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 .color:active{
     transform: scale(0.90);
@@ -49,7 +49,7 @@ body{
     border-radius: 8px;
     cursor: pointer;
     border: 3px solid #fff;
-    background-color: paleturquoise;
+    background-color: #7761aa;
     position: fixed;
     left: 50%;
     bottom: 40px;
@@ -61,5 +61,5 @@ body{
     padding: 12px 32px;
 }
 .ref-btn:hover{
-    background-color:rgb(191, 236, 236);
+    background-color:#987fd3;
 }
