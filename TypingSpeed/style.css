@@ -6,12 +6,13 @@
 html,body{
     height: 100vh;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #90a7e8;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .wrapper{
+    text-align: center;
     background-color: #fff;
     max-height: auto;
     overflow: hidden;
@@ -21,10 +22,20 @@ html,body{
 }
 .wrapper .content{
     height: 100%;
+    margin: 12px 0;
     padding: 20px;
     width: 100%;
     border-radius: 8px;
     border: 1px solid #ccc;
+}
+h2{
+    color: red;
+    opacity: 0;
+    display: none;
+}
+h2.active{
+    display: block;
+    animation: blink 1.5s ease-in-out infinite;
 }
 .input-txt{
     z-index: -999;
@@ -48,7 +59,7 @@ html,body{
     position: relative;
 }
 .text-content p span.active{
-    color: aquamarine;
+    color: #90a7e8;
 }
 .text-content p span.active::before{
     content: "";
@@ -58,13 +69,18 @@ html,body{
     height: 2px;
     width: 100%;
     opacity: 0;
-    background-color: aquamarine;
+    background-color: #90a7e8;
     animation: blink 1s ease-in-out infinite;
 }
 @keyframes blink {
     50%{
         opacity: 1;
     }
+}
+
+.time.last{
+    color: red;
+    font-size: 22px;
 }
 .text-content p span.incorrect{
     color: red;
@@ -100,7 +116,7 @@ html,body{
     outline: none;
     border: none;
     width: 120px;
-    background-color: aquamarine;
+    background-color: #90a7e8;
     padding: 12px;
     border-radius: 5px;
     color: #fff;
