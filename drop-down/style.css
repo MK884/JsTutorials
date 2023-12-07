@@ -76,6 +76,9 @@ i{
 .menu .active, .menu li:hover{
     background-color: #dadada;
 }
+.menu .active{
+    margin: 1px 0px;
+}
 
 .menu::-webkit-scrollbar{
     width: 7px;
