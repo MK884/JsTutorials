@@ -1,10 +1,22 @@
 let btn = document.querySelectorAll(".btn");
 let resetBtn = document.querySelector(".rstBtn");
 let win = document.querySelector(".winner");
-
-let turnX = true;
-
 var count = 0;
+
+const generateRandomTurn = () => {
+  turn = Math.floor(Math.random() * 2);
+  return turn;
+};
+
+var turn = generateRandomTurn();
+
+const showTurns = (t) => {
+  if (t) {
+    win.innerText = "X-Player Turn";
+  } else {
+    win.innerText = "0-Player Turn";
+  }
+};
 
 const winningPatters = [
   [0, 1, 2],
@@ -19,24 +31,26 @@ const winningPatters = [
 
 btn.forEach((pos) => {
   pos.addEventListener("click", () => {
-    if (turnX) { // X-player turn
+    if (turn) {
+      // X-player turn
       pos.innerText = "X";
+      showTurns(!turn);
       pos.style.color = "green";
-      win.innerText = "0-Player Turn";
-      turnX = false;
-    } else { // 0-player turn
+      turn = false;
+    } else {
+      // 0-player turn
       pos.innerText = "0";
       pos.style.color = "red";
-      win.innerText = "X-Player Turn";
-      turnX = true;
+      showTurns(!turn);
+      turn = true;
     }
     pos.disabled = true;
     let isWinner = checkWinner();
     count++;
     console.log(count);
-    if (count == 9 && !isWinner){
-        gameDraw();
-    } 
+    if (count == 9 && !isWinner) {
+      gameDraw();
+    }
   });
 });
 
@@ -46,9 +60,9 @@ const gameDraw = () => {
 };
 
 const resetGame = () => {
-  win.innerText = "X-Player Turn";
   win.style.color = "chocolate";
-
+  let turn = generateRandomTurn();
+  showTurns(turn);
   enabledBtn();
 };
 
@@ -85,3 +99,4 @@ const checkWinner = () => {
 };
 
 resetBtn.addEventListener("click", resetGame);
+showTurns(generateRandomTurn());
