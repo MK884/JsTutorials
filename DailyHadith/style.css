@@ -100,3 +100,7 @@ button:active {
 .more-info.active .details {
   display: block;
 }
+#space {
+  color: #dadadada;
+  font-size: 12px;
+}

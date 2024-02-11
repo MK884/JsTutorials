@@ -36,4 +36,10 @@ nextBtn.addEventListener("click", () => {
   fetchHadith();
 });
 
+window.addEventListener("keyup", (e) => {
+  if(e.keyCode === 32){
+    fetchHadith();
+  }
+})
+
 fetchHadith();
