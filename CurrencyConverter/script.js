@@ -5,6 +5,8 @@ let toCurr = document.querySelector("#to");
 let input = document.querySelector("#amt");
 let btn = document.querySelector("#getBtn");
 let result = document.querySelector(".result p");
+let arrow = document.querySelector(".arrow");
+let icon = document.querySelector(".arrow i");
 
 const BASE_URL =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
@@ -39,7 +41,16 @@ const updateCountry = (country) => {
     );
   dropdown.innerText = countryText;
   country.parentNode.parentNode.parentNode.classList.remove("active");
-  console.log(fromCurr.innerText, toCurr.innerText);
+};
+
+const fetchResult = async (fromCurr, toCurr, amtVal) => {
+  let url = `${BASE_URL}/${fromCurr}/${toCurr}.json`;
+  let response = await fetch(url);
+  let data = await response.json();
+  let rate = data[toCurr];
+  let finalRate = (rate * amtVal).toFixed(2);
+  // it return a promise
+  return finalRate;
 };
 
 const getResult = async () => {
@@ -48,13 +59,28 @@ const getResult = async () => {
     amtVal = 1;
     input.value = "1";
   }
+  let fromRate = fromCurr.innerText.toLowerCase();
+  let currRate = toCurr.innerText.toLowerCase();
+  let Rate = await fetchResult(fromRate, currRate, amtVal);
+  result.innerText = `${Rate} ${toCurr.innerText}`;
+};
 
-  let url = `${BASE_URL}/${fromCurr.innerText.toLowerCase()}/${toCurr.innerText.toLowerCase()}.json`;
-  let response = await fetch(url);
-  let data = await response.json();
-  let rate = data[toCurr.innerText.toLowerCase()];
-  let finalRate = (rate * amtVal).toFixed(2);
-  result.innerText = `${finalRate} ${toCurr.innerText}`;
+const reverseCountry = () => {
+  let fromCuntry = fromCurr.innerText;
+  let toCuntry = toCurr.innerText;
+  let fromCode = countryList[fromCuntry];
+  let toCode = countryList[toCuntry];
+
+  fromCurr.parentElement.querySelector(
+    "img"
+  ).src = `https://flagsapi.com/${toCode}/flat/64.png`;
+  toCurr.parentElement.querySelector(
+    "img"
+  ).src = `https://flagsapi.com/${fromCode}/flat/64.png`;
+  fromCurr.innerText = toCuntry;
+  toCurr.innerText = fromCuntry;
+  getResult();
 };
 btn.addEventListener("click", getResult);
+arrow.addEventListener("click", reverseCountry);
 addCountry();

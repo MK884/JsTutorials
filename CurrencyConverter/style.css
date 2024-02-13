@@ -61,11 +61,17 @@ input {
 }
 .arrow {
   margin-top: 3rem;
+  cursor: pointer;
+}
+.arrow > i:active {
+  border: 1px solid #0071eb;
+  color: #0071eb;
 }
 .arrow > i {
   padding: 10px;
   border: 1px solid #dadada;
   border-radius: 50%;
+  transition: all ease-in-out 0.2s;
 }
 img {
   height: 2.5rem;
