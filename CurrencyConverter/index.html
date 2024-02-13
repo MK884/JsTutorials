@@ -20,52 +20,42 @@
           <p>Amount</p>
           <input type="number" id="amt" />
         </div>
-        <div>
+        <div class="dropdown">
           <p>From</p>
-          <div class="select from active">
+          <div class="select">
             <div>
               <img src="https://flagsapi.com/US/flat/64.png" />
-              <div class="selected">Select Country</div>
+              <div class="selected" id="from" value="usd">USD</div>
             </div>
             <i class="ri-arrow-down-s-line"></i>
           </div>
-          <div class="options from">
-            <ul class="menu">
-              <li>India</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Russia</li>
-            </ul>
+          <div class="options">
+            <ul class="menu"></ul>
           </div>
         </div>
         <div class="arrow"><i class="ri-arrow-right-line"></i></div>
-        <div>
+        <div class="dropdown">
           <p>To</p>
-          <div class="select to">
+          <div class="select">
             <div>
               <img src="https://flagsapi.com/IN/flat/64.png" />
-              <div class="selected">Select Country</div>
+              <div class="selected" id="to" value="inr">INR</div>
             </div>
             <i class="ri-arrow-down-s-line"></i>
           </div>
-          <div class="options to">
-            <ul class="menu">
-              <li>India</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Dubai</li>
-              <li>Russia</li>
-            </ul>
+          <div class="options">
+            <ul class="menu"></ul>
           </div>
         </div>
       </div>
-      <div class="btn"></div>
+      <div class="result">
+        <p>22.59567757 INR</p>
+      </div>
+      <div class="btn">
+        <button id="getBtn">Convert</button>
+      </div>
     </div>
+    <script src="codes.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
