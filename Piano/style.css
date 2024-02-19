@@ -1,0 +1,116 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+}
+body,
+.wrapper .options,
+.options .volumD,
+.options .keyD {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  height: 100vh;
+  background-color: #e3f2fd;
+}
+
+.container {
+  background-color: #111;
+  height: 400px;
+  width: 800px;
+  border-radius: 12px;
+  padding: 35px 40px;
+}
+.wrapper .options {
+  justify-content: space-between;
+  color: #b2b2b2;
+}
+.options .volumD,
+.keyD {
+  gap: 1rem;
+}
+.options .volumD input {
+  outline: none;
+  accent-color: #dadada;
+}
+.options .keyD input {
+  position: relative;
+  appearance: none;
+  height: 30px;
+  width: 60px;
+  background: #4b4b4b;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.options .keyD input::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  left: 5px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background-color: #b2b2b2;
+  transition: all 0.2s ease;
+}
+.options .keyD input:checked {
+  background-color: #b2b2b2;
+}
+.options .keyD input:checked::before {
+  left: 35px;
+  background: #fff;
+}
+.wrapper .piano {
+  list-style: none;
+  color: #b2b2b2;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+.piano {
+  display: flex;
+}
+.piano .key {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.piano.hide .key span {
+  display: none;
+}
+.piano .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+.piano .black {
+  width: 44px;
+  height: 130px;
+  z-index: 3;
+  background-color: #111;
+  margin: 0 -22px;
+  border-radius: 0 0 8px 8px;
+}
+.piano .key.white.active {
+  transform: scale(0.95);
+  filter: brightness(120%);
+}
+.piano .key.black.active {
+  transform: scaleX(0.9);
+  filter: brightness(120%);
+}
+.piano .white {
+  width: 70px;
+  height: 230px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #111;
+}
