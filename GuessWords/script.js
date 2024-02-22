@@ -16,6 +16,7 @@ const genRanWords = () => {
   word = wordObj.word;
   hintBox.innerText = hint;
   maxGuesses = word.length <= 3 ? 5 : 8;
+  console.log(word);
 
   (wrongWords = []), (correctWords = []);
   let html = "";
@@ -26,9 +27,10 @@ const genRanWords = () => {
 
   let randomIdx = Math.floor(Math.random() * word.length);
   inputTag.querySelectorAll("input")[randomIdx].value = word[randomIdx];
+  // push the random word 
+  correctWords.push(word[randomIdx]);
 
   remGuess.innerText = maxGuesses;
-
 };
 
 genRanWords();
